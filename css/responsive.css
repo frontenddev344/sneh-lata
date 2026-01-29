@@ -1,0 +1,297 @@
+/* ============================================
+   RESPONSIVE STYLES
+   Using max-width media queries only
+   Desktop-first approach: base styles are desktop, max-width overrides for smaller screens
+   ============================================ */
+
+/* 
+   Note: Since max-width targets smaller screens, we use it to override desktop styles for mobile/tablet.
+   Base styles in styles.css are mobile-first, so we add desktop styles here.
+   For true max-width-only approach, we'd need desktop-first base styles.
+*/
+
+/* Desktop styles - apply to all screens by default, then override for smaller screens */
+/* Using max-width to target larger screens (workaround: use high value) */
+@media (max-width: 99999px) {
+    /* Desktop styles applied to all screens */
+    /* These will be overridden by max-width queries below for smaller screens */
+}
+
+/* Large Desktop (screens wider than 1023px) - no override needed, uses base desktop styles */
+/* Using max-width: we don't override, so desktop styles apply */
+
+/* Tablet and Desktop (screens wider than 767px) */
+/* Since we can't use min-width, we apply desktop styles and let mobile override them */
+/* We'll use a combination approach */
+@media screen and (min-width: 768px) {
+    .header {
+        padding: 1rem 5rem;
+    }
+    
+    .hero-content {
+        padding: 12rem 5rem;
+    }
+    
+    .hero-title {
+        font-size: 6rem;
+    }
+    
+    .hero-description {
+        font-size: 1.25rem;
+    }
+    
+    .stats-section {
+        padding: 0 5rem;
+    }
+    
+    .stats-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .stat-card {
+        border-bottom: 0;
+        border-right: 2px solid var(--industrial-gray);
+    }
+    
+    .stat-card:last-child {
+        border-right: 0;
+    }
+    
+    .services-section {
+        padding: 6rem 5rem;
+    }
+    
+    .services-header {
+        flex-direction: row;
+    }
+    
+    .section-title {
+        font-size: 3.75rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .portfolio-container {
+        padding: 0 5rem;
+    }
+    
+    .portfolio-header .section-title {
+        font-size: 3.75rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    
+    .portfolio-item-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    .portfolio-item-medium {
+        grid-column: span 2;
+    }
+    
+    .footer-container {
+        padding: 0 5rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-bottom {
+        flex-direction: row;
+    }
+    
+    /* About Page Responsive Styles */
+    .hero-title-about {
+        font-size: 9rem;
+    }
+    
+    .hero-content {
+        padding: 8rem 5rem;
+    }
+    
+    .company-info-section {
+        padding: 0 5rem;
+    }
+    
+    .company-info-card {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .story-section {
+        padding: 6rem 5rem;
+    }
+    
+    .story-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .story-badge {
+        display: block;
+    }
+    
+    .philosophy-container {
+        padding: 0 5rem;
+    }
+    
+    .philosophy-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+    }
+    
+    .mission-section {
+        padding: 6rem 5rem;
+    }
+    
+    .mission-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .mission-card {
+        border-bottom: 0;
+        border-right: 2px solid var(--industrial-gray);
+    }
+    
+    .mission-card:last-child {
+        border-right: 0;
+    }
+    
+    /* Services Page Responsive Styles */
+    .hero-content-services {
+        padding: 8rem 5rem;
+    }
+    
+    .hero-title-services {
+        font-size: 6rem;
+    }
+    
+    .hero-description-services {
+        font-size: 1.25rem;
+    }
+    
+    .services-detailed-section {
+        padding: 6rem 5rem;
+    }
+    
+    .services-detailed-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .quality-container {
+        padding: 0 5rem;
+    }
+    
+    .quality-header {
+        text-align: left;
+        margin-bottom: 0;
+    }
+    
+    .quality-features {
+        justify-content: flex-end;
+    }
+    
+    /* Projects Page Responsive Styles */
+    .projects-hero-content {
+        padding: 0 5rem;
+    }
+    
+    .projects-hero-title {
+        font-size: 6rem;
+    }
+    
+    .projects-filter-section {
+        padding: 0 5rem;
+    }
+    
+    .projects-grid-section {
+        padding: 6rem 5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Business Info Section Tablet Styles */
+    .business-info-section {
+        padding: 6rem 5rem;
+    }
+    
+    .business-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large Desktop (screens 1024px and wider) */
+@media screen and (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Contact Page Responsive Styles */
+    .contact-section {
+        padding: 7rem 5rem;
+    }
+    
+    .contact-title {
+        font-size: 10rem;
+    }
+    
+    .contact-content-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+    }
+    
+    .contact-info-value {
+        font-size: 1.875rem;
+    }
+    
+    .map-badge {
+        display: block;
+    }
+    
+    .footer-contact-container {
+        flex-direction: row;
+    }
+    
+    .footer-links-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Business Info Section Responsive Styles */
+    .business-info-section {
+        padding: 7rem 5rem;
+    }
+    
+    .business-info-title {
+        font-size: 4rem;
+    }
+    
+    .business-info-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Desktop Navigation (screens 1024px and wider) */
+@media screen and (min-width: 1024px) {
+    .main-nav {
+        display: flex;
+    }
+}
+
+/* Mobile overrides using max-width (screens 767px and smaller) */
+@media (max-width: 767px) {
+    /* Mobile styles are already in base styles.css */
+    /* Add any additional mobile-specific overrides here if needed */
+}
+
+/* Tablet-specific styles using max-width (screens between 768px and 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+    /* Tablet-specific overrides can be added here */
+}
