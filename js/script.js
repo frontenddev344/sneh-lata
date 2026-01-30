@@ -43,3 +43,54 @@ if (contactForm) {
         // You can add AJAX call or form processing here
     });
 }
+
+// Project Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    if (filterButtons.length > 0 && projectCards.length > 0) {
+        // Initialize project cards - ensure they're visible and set transitions
+        projectCards.forEach(card => {
+            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+        });
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('filter-button-active'));
+                
+                // Add active class to clicked button
+                this.classList.add('filter-button-active');
+                
+                // Get the filter value
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Filter projects with smooth animation
+                projectCards.forEach((card, index) => {
+                    const cardCategory = card.getAttribute('data-category');
+                    const shouldShow = filterValue === 'all' || cardCategory === filterValue;
+                    
+                    if (shouldShow) {
+                        // Show the card
+                        card.style.display = '';
+                        // Fade in with slight delay for staggered effect
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, index * 50);
+                    } else {
+                        // Hide the card
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    }
+});
