@@ -64,22 +64,32 @@ if (contactForm) {
 }
 
 // Project Filter Functionality
-document.addEventListener('DOMContentLoaded', function() {
+function initProjectFilter() {
     const filterButtons = document.querySelectorAll('.filter-button');
     const projectCards = document.querySelectorAll('.project-card');
     
     if (filterButtons.length > 0 && projectCards.length > 0) {
+        // Remove existing event listeners by cloning buttons
+        filterButtons.forEach(button => {
+            const newButton = button.cloneNode(true);
+            button.parentNode.replaceChild(newButton, button);
+        });
+        
+        // Get fresh references after cloning
+        const freshFilterButtons = document.querySelectorAll('.filter-button');
+        const freshProjectCards = document.querySelectorAll('.project-card');
+        
         // Initialize project cards - ensure they're visible and set transitions
-        projectCards.forEach(card => {
+        freshProjectCards.forEach(card => {
             card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
             card.style.opacity = '1';
             card.style.transform = 'scale(1)';
         });
         
-        filterButtons.forEach(button => {
+        freshFilterButtons.forEach(button => {
             button.addEventListener('click', function() {
                 // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('filter-button-active'));
+                freshFilterButtons.forEach(btn => btn.classList.remove('filter-button-active'));
                 
                 // Add active class to clicked button
                 this.classList.add('filter-button-active');
@@ -88,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const filterValue = this.getAttribute('data-filter');
                 
                 // Filter projects with smooth animation
-                projectCards.forEach((card, index) => {
+                freshProjectCards.forEach((card, index) => {
                     const cardCategory = card.getAttribute('data-category');
                     const shouldShow = filterValue === 'all' || cardCategory === filterValue;
                     
@@ -112,6 +122,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+}
+
+// Initialize filter on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initProjectFilter();
 });
 
 // Testimonials Swiper Initialization
@@ -312,6 +327,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             mainNav.classList.remove('active');
                         });
                     }
+                    
+                    // Reinitialize project filter
+                    initProjectFilter();
                     
                     // Scroll to top on page change
                     window.scrollTo(0, 0);
