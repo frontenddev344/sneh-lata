@@ -109,3 +109,9 @@ body.barba-transitioning {
 .barba-container.barba-enter {
     opacity: 1;
 }
+
+@media  screen and (max-width: 768px) {
+    .barba-transition-box{
+        will-change: inherit;
+    }
+}

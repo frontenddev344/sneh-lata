@@ -18,12 +18,16 @@
         padding: 12rem 1.5rem;
     }
     
+    .hero-badge {
+        font-size: clamp(0.625rem, 1.5vw, 0.75rem);
+    }
+    
     .hero-title {
-        font-size: 6rem;
+        font-size: clamp(3rem, 8vw, 6rem);
     }
     
     .hero-description {
-        font-size: 1.25rem;
+        font-size: clamp(1rem, 2.2vw, 1.25rem);
     }
     
     .stats-section {
@@ -78,7 +82,7 @@
     }
     
     .portfolio-header .section-title {
-        font-size: 3.75rem;
+        font-size: clamp(2.5rem, 6vw, 3.75rem);
     }
     
     .portfolio-grid {
@@ -106,8 +110,16 @@
     }
     
     /* About Page Responsive Styles */
+    .hero-badge-about {
+        font-size: clamp(0.625rem, 1.5vw, 0.75rem);
+    }
+    
     .hero-title-about {
-        font-size: 9rem;
+        font-size: clamp(4rem, 12vw, 9rem);
+    }
+    
+    .hero-description-about {
+        font-size: clamp(1rem, 2.2vw, 1.25rem);
     }
     
     .hero-content {
@@ -161,16 +173,20 @@
     }
     
     /* Services Page Responsive Styles */
+    .hero-badge-services {
+        font-size: clamp(0.625rem, 1.5vw, 0.75rem);
+    }
+    
     .hero-content-services {
         padding: 8rem 1.5rem;
     }
     
     .hero-title-services {
-        font-size: 6rem;
+        font-size: clamp(3rem, 8vw, 6rem);
     }
     
     .hero-description-services {
-        font-size: 1.25rem;
+        font-size: clamp(1rem, 2.2vw, 1.25rem);
     }
     
     .services-detailed-section {
@@ -196,7 +212,7 @@
     }
     
     .quality-title {
-        font-size: 2rem;
+        font-size: clamp(2rem, 4vw, 3.75rem);
     }
     
     .quality-feature-card {
@@ -204,12 +220,20 @@
     }
     
     /* Projects Page Responsive Styles */
+    .projects-hero-badge {
+        font-size: clamp(0.625rem, 1.5vw, 0.75rem);
+    }
+    
     .projects-hero-content {
         padding: 0 1.5rem;
     }
     
     .projects-hero-title {
-        font-size: 6rem;
+        font-size: clamp(3rem, 8vw, 6rem);
+    }
+    
+    .projects-hero-description {
+        font-size: clamp(1rem, 2.2vw, 1.25rem);
     }
     
     .projects-filter-section {
@@ -246,7 +270,7 @@
     }
     
     .contact-title {
-        font-size: 6rem;
+        font-size: clamp(3rem, 8vw, 6rem);
     }
     
     .contact-content-grid {
@@ -255,7 +279,7 @@
     }
     
     .contact-info-value {
-        font-size: 1.4rem;
+        font-size: clamp(1.125rem, 2.5vw, 1.4rem);
     }
     
     .map-badge {
@@ -276,7 +300,7 @@
     }
     
     .business-info-title {
-        font-size: 4rem;
+        font-size: clamp(2.5rem, 6vw, 4rem);
     }
     
     .business-info-grid {
@@ -378,6 +402,16 @@
         clip-path: polygon(0 3%, 100% 0, 100% 100%, 0% 100%);
         padding: 10rem 0 4rem;
     }
+
+    .hero-badge{
+        margin-bottom:0;
+    }
+    .hero-content {
+        gap: 1rem;
+    }
+    .projects-hero-badge {
+        margin-bottom: 20px;
+    }
 }
 
 /* Tablet-specific styles using max-width (screens between 768px and 1023px) */
@@ -399,5 +433,8 @@
     }
     .contact-form-wrapper {
         padding: 1.5rem;
+    }
+    .footer {
+        padding: 3rem 0 2rem;
     }
 }
