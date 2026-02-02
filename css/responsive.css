@@ -3,14 +3,19 @@
    Using max-width media queries only
    Desktop-first approach: base styles are desktop, max-width overrides for smaller screens
    ============================================ */
-
+@media screen and (min-width: 992px) {
+    .footer-container {
+        padding: 0 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 @media screen and (min-width: 768px) {
     .header {
-        padding: 1rem 5rem;
+        padding: 1rem 1.5rem;
     }
     
     .hero-content {
-        padding: 12rem 5rem;
+        padding: 12rem 1.5rem;
     }
     
     .hero-title {
@@ -22,7 +27,7 @@
     }
     
     .stats-section {
-        padding: 0 5rem;
+        padding: 0 1.5rem;
     }
     
     .stats-container {
@@ -39,7 +44,7 @@
     }
     
     .services-section {
-        padding: 6rem 5rem;
+        padding: 6rem 1.5rem;
     }
     
     .services-header {
@@ -53,7 +58,7 @@
     
     /* Why Choose Us & Testimonials Responsive */
     .why-choose-section {
-        padding: 6rem 5rem;
+        padding: 6rem 1.5rem;
     }
     
     .why-choose-grid {
@@ -61,7 +66,7 @@
     }
     
     .testimonials-section {
-        padding: 8rem 5rem 5rem;
+        padding: 8rem 1.5rem 5rem;
     }
     
     .testimonials-grid {
@@ -69,7 +74,7 @@
     }
     
     .portfolio-container {
-        padding: 0 5rem;
+        padding: 0 1.5rem;
     }
     
     .portfolio-header .section-title {
@@ -90,10 +95,7 @@
         grid-column: span 2;
     }
     
-    .footer-container {
-        padding: 0 5rem;
-        grid-template-columns: repeat(2, 1fr);
-    }
+   
     
     .form-row {
         grid-template-columns: repeat(2, 1fr);
@@ -109,11 +111,11 @@
     }
     
     .hero-content {
-        padding: 8rem 5rem;
+        padding: 8rem 1.5rem;
     }
     
     .company-info-section {
-        padding: 0 5rem;
+        padding: 0 1.5rem;
     }
     
     .company-info-card {
@@ -121,7 +123,7 @@
     }
     
     .story-section {
-        padding: 6rem 5rem;
+        padding: 6rem 1.5rem;
     }
     
     .story-container {
@@ -133,7 +135,7 @@
     }
     
     .philosophy-container {
-        padding: 0 5rem;
+        padding: 0 1.5rem;
     }
     
     .philosophy-grid {
@@ -142,7 +144,7 @@
     }
     
     .mission-section {
-        padding: 6rem 5rem;
+        padding: 6rem 1.5rem;
     }
     
     .mission-grid {
@@ -160,7 +162,7 @@
     
     /* Services Page Responsive Styles */
     .hero-content-services {
-        padding: 8rem 5rem;
+        padding: 8rem 1.5rem;
     }
     
     .hero-title-services {
@@ -172,7 +174,7 @@
     }
     
     .services-detailed-section {
-        padding: 6rem 5rem;
+        padding: 6rem 1.5rem;
     }
     
     .services-detailed-grid {
@@ -180,7 +182,7 @@
     }
     
     .quality-container {
-        padding: 0 5rem;
+        padding: 0 1.5rem;
     }
     
     .quality-header {
@@ -203,7 +205,7 @@
     
     /* Projects Page Responsive Styles */
     .projects-hero-content {
-        padding: 0 5rem;
+        padding: 0 1.5rem;
     }
     
     .projects-hero-title {
@@ -211,11 +213,11 @@
     }
     
     .projects-filter-section {
-        padding: 0 5rem;
+        padding: 0 1.5rem;
     }
     
     .projects-grid-section {
-        padding: 6rem 5rem;
+        padding: 6rem 1.5rem;
     }
     
     .projects-grid {
@@ -224,7 +226,7 @@
     
     /* Business Info Section Tablet Styles */
     .business-info-section {
-        padding: 6rem 5rem;
+        padding: 6rem 1.5rem;
     }
     
     .business-info-grid {
@@ -240,7 +242,7 @@
     
     /* Contact Page Responsive Styles */
     .contact-section {
-        padding: 7rem 5rem;
+        padding: 7rem 1.5rem;
     }
     
     .contact-title {
@@ -270,7 +272,7 @@
     
     /* Business Info Section Responsive Styles */
     .business-info-section {
-        padding: 7rem 5rem;
+        padding: 7rem 1.5rem;
     }
     
     .business-info-title {
@@ -372,6 +374,10 @@
     .testimonials-prev:after {
         font-size: 1.125rem !important;
     }
+    .philosophy-section {
+        clip-path: polygon(0 3%, 100% 0, 100% 100%, 0% 100%);
+        padding: 10rem 0 4rem;
+    }
 }
 
 /* Tablet-specific styles using max-width (screens between 768px and 1023px) */
@@ -387,5 +393,11 @@
     }
     .contact-form-section {
         padding: 2rem 1.2rem;
+    }
+    .mission-card {
+        padding: 1.5rem;
+    }
+    .contact-form-wrapper {
+        padding: 1.5rem;
     }
 }

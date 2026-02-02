@@ -502,11 +502,11 @@ body {
 /* ============================================
    PHILOSOPHY SECTION
    ============================================ */
-.philosophy-section {
+   .philosophy-section {
     background-color: var(--industrial-gray);
     color: var(--white);
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
-    padding: 8rem 0;
+    padding: 14rem 0 6rem;
     position: relative;
 }
 
@@ -1252,11 +1252,11 @@ body {
     padding: 0 1.5rem;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 1rem;
 }
 
 .footer-title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.05em;
