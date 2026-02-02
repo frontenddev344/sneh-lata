@@ -46,11 +46,25 @@
         flex-direction: row;
     }
     
-    .section-title {
-        font-size: 3.75rem;
-    }
     
     .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Why Choose Us & Testimonials Responsive */
+    .why-choose-section {
+        padding: 6rem 5rem;
+    }
+    
+    .why-choose-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonials-section {
+        padding: 8rem 5rem 5rem;
+    }
+    
+    .testimonials-grid {
         grid-template-columns: repeat(3, 1fr);
     }
     
@@ -230,7 +244,7 @@
     }
     
     .contact-title {
-        font-size: 10rem;
+        font-size: 6rem;
     }
     
     .contact-content-grid {
@@ -239,7 +253,7 @@
     }
     
     .contact-info-value {
-        font-size: 1.875rem;
+        font-size: 1.4rem;
     }
     
     .map-badge {
@@ -266,6 +280,12 @@
     .business-info-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+    
+    /* Why Choose Us & Testimonials Responsive */
+    .why-choose-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
 }
 
 /* Large Desktop Navigation (screens 1024px and wider) */
@@ -287,6 +307,27 @@
 
 /* Mobile overrides using max-width (screens 767px and smaller) */
 @media (max-width: 1023px) {
+    /* Testimonials Navigation Arrows - Mobile */
+    .testimonials-header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .testimonials-navigation {
+        margin-top: 1.5rem;
+        gap: 24px;
+    }
+    
+    .testimonials-next,
+    .testimonials-prev {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    
+    .testimonials-next:after,
+    .testimonials-prev:after {
+        font-size: 1.125rem !important;
+    }
         /* Mobile styles are already in base styles.css */
         /* Add any additional mobile-specific overrides here if needed */
         .main-nav {
@@ -314,9 +355,37 @@
            backdrop-filter: none;
         }
     
+    /* Testimonials Navigation Arrows - Mobile */
+    .testimonials-next {
+        right: 0.5rem !important;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    
+    .testimonials-prev {
+        left: 0.5rem !important;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    
+    .testimonials-next:after,
+    .testimonials-prev:after {
+        font-size: 1.125rem !important;
+    }
 }
 
 /* Tablet-specific styles using max-width (screens between 768px and 1023px) */
 @media (max-width: 1023px) and (min-width: 768px) {
     /* Tablet-specific overrides can be added here */
+}
+
+
+
+@media (max-width: 575px) {
+    .contact-info-item {
+        flex-wrap: wrap;
+    }
+    .contact-form-section {
+        padding: 2rem 1.2rem;
+    }
 }

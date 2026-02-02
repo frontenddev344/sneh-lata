@@ -113,3 +113,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Testimonials Swiper Initialization
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonialsSwiper = document.querySelector('.testimonials-swiper');
+    if (testimonialsSwiper) {
+        new Swiper('.testimonials-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.testimonials-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.testimonials-next',
+                prevEl: '.testimonials-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    }
+});
