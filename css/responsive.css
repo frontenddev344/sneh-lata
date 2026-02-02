@@ -4,25 +4,6 @@
    Desktop-first approach: base styles are desktop, max-width overrides for smaller screens
    ============================================ */
 
-/* 
-   Note: Since max-width targets smaller screens, we use it to override desktop styles for mobile/tablet.
-   Base styles in styles.css are mobile-first, so we add desktop styles here.
-   For true max-width-only approach, we'd need desktop-first base styles.
-*/
-
-/* Desktop styles - apply to all screens by default, then override for smaller screens */
-/* Using max-width to target larger screens (workaround: use high value) */
-@media (max-width: 99999px) {
-    /* Desktop styles applied to all screens */
-    /* These will be overridden by max-width queries below for smaller screens */
-}
-
-/* Large Desktop (screens wider than 1023px) - no override needed, uses base desktop styles */
-/* Using max-width: we don't override, so desktop styles apply */
-
-/* Tablet and Desktop (screens wider than 767px) */
-/* Since we can't use min-width, we apply desktop styles and let mobile override them */
-/* We'll use a combination approach */
 @media screen and (min-width: 768px) {
     .header {
         padding: 1rem 5rem;
@@ -292,12 +273,47 @@
     .main-nav {
         display: flex;
     }
+    .menu-button {
+        display: none;
+    }
+    .cta-button{
+        display: block;
+    }
+    .close-menu-button {
+        display: none;
+    }
+    
 }
 
 /* Mobile overrides using max-width (screens 767px and smaller) */
-@media (max-width: 767px) {
-    /* Mobile styles are already in base styles.css */
-    /* Add any additional mobile-specific overrides here if needed */
+@media (max-width: 1023px) {
+        /* Mobile styles are already in base styles.css */
+        /* Add any additional mobile-specific overrides here if needed */
+        .main-nav {
+            align-items: center;
+            gap: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            background: var(--background-light);
+            border: 1px  solid var(--primary);
+            padding: 60px 20px;
+            width: 100%;
+            max-width: 350px;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 99;
+            transform: translateX(-100%);
+            transition: all 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+        }
+        .main-nav.active {
+            transform: translateX(0);
+        }
+        .header {
+           backdrop-filter: none;
+        }
+    
 }
 
 /* Tablet-specific styles using max-width (screens between 768px and 1023px) */

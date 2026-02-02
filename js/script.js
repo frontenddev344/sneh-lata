@@ -33,6 +33,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Mobile Menu Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.querySelector('.menu-button');
+    const closeMenuButton = document.querySelector('.close-menu-button');
+    const mainNav = document.querySelector('.main-nav');
+    
+    if (menuButton && mainNav) {
+        menuButton.addEventListener('click', function() {
+            mainNav.classList.add('active');
+        });
+    }
+    
+    if (closeMenuButton && mainNav) {
+        closeMenuButton.addEventListener('click', function() {
+            mainNav.classList.remove('active');
+        });
+    }
+});
+
 // Form submission handler (if needed)
 const contactForm = document.querySelector('form');
 if (contactForm) {
